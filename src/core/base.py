@@ -22,7 +22,8 @@ class UpdateStatus(Enum):
     NOT_AVAILABLE = "not_available"
 
 
-class PackageInfo(dataclass):
+@dataclass
+class PackageInfo:
     """Information about a package."""
     name: str
     current_version: Optional[str] = None
@@ -32,7 +33,8 @@ class PackageInfo(dataclass):
     manager: Optional[str] = None
 
 
-class UpdateResult(dataclass):
+@dataclass
+class UpdateResult:
     """Result of an update operation."""
     package: PackageInfo
     status: UpdateStatus

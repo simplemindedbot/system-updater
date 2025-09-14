@@ -14,7 +14,7 @@ from .config import ConfigManager
 from .base import PackageManager, UpdateResult, UpdateStatus, PackageInfo
 
 # Import all available managers
-from ..managers.homebrew import HomebrewManager
+from managers.homebrew import HomebrewManager
 
 
 class SystemUpdater:

@@ -10,7 +10,7 @@ import re
 from typing import List, Dict, Any, Optional
 from pathlib import Path
 
-from ..core.base import PackageManager, PackageInfo, UpdateResult, UpdateStatus
+from core.base import PackageManager, PackageInfo, UpdateResult, UpdateStatus
 
 
 class HomebrewManager(PackageManager):
