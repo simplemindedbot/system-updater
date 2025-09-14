@@ -1,0 +1,79 @@
+# System Updater Configuration
+# This is the default configuration file for the system-updater
+
+# Global settings
+log_level: INFO
+dry_run: false
+sudo_mode: prompt  # Options: prompt, cache, skip, homebrew_only
+
+# Scheduling
+auto_update: true
+schedule: weekly  # Options: daily, weekly, monthly
+
+# Package manager configurations
+managers:
+  
+  # Homebrew - macOS package manager
+  homebrew:
+    enabled: true
+    update_formulae: true     # Update command-line tools
+    update_casks: true        # Update GUI applications
+    cleanup: true             # Remove old versions
+    exclude_packages: []      # Packages to skip
+    
+  # Mac App Store
+  mac_app_store:
+    enabled: true
+    
+  # npm - Node.js package manager  
+  npm:
+    enabled: true
+    global_only: true         # Only update global packages
+    exclude_packages: []
+    
+  # Python package managers
+  python:
+    enabled: true
+    pip_user_only: true       # Only update user packages
+    update_pip: true          # Update pip itself
+    use_uv: true              # Use uv for tool management
+    exclude_packages: []
+    
+  # Ruby gems
+  ruby:
+    enabled: true
+    user_install: true        # Install to user directory
+    update_system: false      # Don't update system gems
+    exclude_packages: []
+    
+  # R packages  
+  r_packages:
+    enabled: true
+    cran_mirror: "https://cran.rstudio.com"
+    update_bioconductor: true
+    exclude_packages: []
+    
+  # TeX Live
+  texlive:
+    enabled: true
+    update_all: true
+    exclude_packages: []
+    
+  # VS Code extensions
+  vscode:
+    enabled: true
+    auto_update_extensions: true
+    exclude_extensions: []
+
+# Global package exclusions (applies to all managers)
+exclude_packages: []
+
+# Logging configuration
+log_file: ~/Library/Logs/system-updater.log
+
+# Notification settings
+notifications:
+  enabled: true
+  on_start: false
+  on_completion: true
+  on_errors: true

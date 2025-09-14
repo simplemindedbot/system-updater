@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.systemupdater</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/scotcampbell/bin/update-system.sh</string>
+    </array>
+    
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>0</integer>
+        <key>Hour</key>
+        <integer>3</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+    
+    <key>WorkingDirectory</key>
+    <string>/Users/scotcampbell</string>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        <key>HOME</key>
+        <string>/Users/scotcampbell</string>
+        <key>USER</key>
+        <string>scotcampbell</string>
+        <key>HOMEBREW_NO_ENV_HINTS</key>
+        <string>1</string>
+    </dict>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/scotcampbell/Library/Logs/system-updates-stdout.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/scotcampbell/Library/Logs/system-updates-stderr.log</string>
+    
+    <key>RunAtLoad</key>
+    <false/>
+    
+    <key>ProcessType</key>
+    <string>Background</string>
+    
+    <key>LowPriorityIO</key>
+    <true/>
+    
+    <key>Nice</key>
+    <integer>1</integer>
+</dict>
+</plist>
